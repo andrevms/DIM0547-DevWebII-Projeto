@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -20,7 +19,7 @@ public class Alternativa {
     private String alternativa;
 
     @ManyToOne
-    @JoinColumn(name="quiz_id", nullable=false)
+    @JoinColumn(name="questao_id", nullable=false)
     private Questao questao;
 
     //Contrutor

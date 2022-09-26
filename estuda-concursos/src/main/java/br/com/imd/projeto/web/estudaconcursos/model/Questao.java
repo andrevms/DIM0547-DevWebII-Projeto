@@ -2,8 +2,6 @@ package br.com.imd.projeto.web.estudaconcursos.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -38,8 +34,8 @@ public class Questao {
     @JoinTable(name = "alternativas_questoes", joinColumns = @JoinColumn(name = "questao_id"), inverseJoinColumns = @JoinColumn(name = "alternativa_id"))
     private List<Alternativa> alternativas;
 
-
-
+    @ManyToMany(mappedBy = "questoes")
+    private List<Prova> provas;
     
     public Questao() {
     }
