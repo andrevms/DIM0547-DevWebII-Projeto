@@ -19,6 +19,10 @@ public class Usuario {
 
     private String nome;
 
+    private String email;
+
+    private String senha;
+
     @OneToMany(fetch = FetchType.LAZY)
     private List<ListaDeEstudos> listaDeEstudos;
 
