@@ -15,14 +15,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario saveUsuario(Usuario usuario) {
-        // TODO Auto-generated method stub
-        return null;
+        return usuarioRepository.save(usuario);
     }
 
     @Override
     public void removeUsuario(Usuario usuario) {
-        // TODO Auto-generated method stub
-        
+       usuarioRepository.delete(usuario);
     }
 
     @Override
@@ -33,8 +31,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<Usuario> getListUsuario() {
-        // TODO Auto-generated method stub
-        return null;
+        return usuarioRepository.findAll();
+    }
+
+    @Override
+    public Usuario login(String email, String senha) {
+        return usuarioRepository.loginUsuario(email, senha);
     }
     
     

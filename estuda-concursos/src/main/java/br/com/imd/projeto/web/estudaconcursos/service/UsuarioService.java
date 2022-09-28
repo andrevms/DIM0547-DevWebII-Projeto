@@ -16,4 +16,6 @@ public interface UsuarioService {
     public Usuario getUsuarioById(Integer id);
 
     public List<Usuario> getListUsuario();
+
+    public Usuario login(String email, String senha);
 }

@@ -27,18 +27,42 @@ public class Usuario {
     private List<ListaDeEstudos> listaDeEstudos;
 
     public Usuario() {
-      
+
     }
 
     public Usuario(String nome, List<ListaDeEstudos> listaDeEstudos) {
         this.nome = nome;
         this.listaDeEstudos = listaDeEstudos;
     }
-    
+
     public Usuario(int id, String nome, List<ListaDeEstudos> listaDeEstudos) {
         this.id = id;
         this.nome = nome;
         this.listaDeEstudos = listaDeEstudos;
+    }
+
+    public Usuario(int id, String nome, List<ListaDeEstudos> listaDeEstudos, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.listaDeEstudos = listaDeEstudos;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public int getId() {
@@ -65,5 +89,4 @@ public class Usuario {
         this.listaDeEstudos = listaDeEstudos;
     }
 
-    
 }

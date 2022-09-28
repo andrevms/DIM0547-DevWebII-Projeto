@@ -1,5 +1,7 @@
 package br.com.imd.projeto.web.estudaconcursos.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import br.com.imd.projeto.web.estudaconcursos.model.Questao;
