@@ -21,4 +21,45 @@ public class Usuario {
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<ListaDeEstudos> listaDeEstudos;
+
+    public Usuario() {
+      
+    }
+
+    public Usuario(String nome, List<ListaDeEstudos> listaDeEstudos) {
+        this.nome = nome;
+        this.listaDeEstudos = listaDeEstudos;
+    }
+    
+    public Usuario(int id, String nome, List<ListaDeEstudos> listaDeEstudos) {
+        this.id = id;
+        this.nome = nome;
+        this.listaDeEstudos = listaDeEstudos;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<ListaDeEstudos> getListaDeEstudos() {
+        return listaDeEstudos;
+    }
+
+    public void setListaDeEstudos(List<ListaDeEstudos> listaDeEstudos) {
+        this.listaDeEstudos = listaDeEstudos;
+    }
+
+    
 }
