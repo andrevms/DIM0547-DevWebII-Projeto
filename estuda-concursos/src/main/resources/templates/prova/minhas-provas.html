@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <div th:replace="~{partials/head}"></div>
+  <title>Minhas provas | Estuda Concursos</title>
+</head>
+
+<body class="bg-light">
+<div th:replace="~{partials/header}"></div>
+
+<div class="conteiner-fluid p-8 py-14">
+  <div class="row">
+    <div class="offset-xl-1 col-xl-10 col-md-12">
+      <div class="row">
+        <!-- Conteúdo -->
+        <div class="col-md-12 col-12 mb-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-4 fw-bold ls-sm">Minhas provas</h1>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+
+                <form action="">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Adicionar prova</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <label for="nome" class="form-label">Nome</label>
+                      <input type="text" id="nome" class="form-control" aria-describedby="ajudaNomeProva" minlenght="5" required>
+                      <div id="ajudaNomeProva" class="form-text">
+                        Digite aqui o nome da prova.
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <div>
+              <!-- Adicionar Prova Dropdown -->
+              <div class="btn-group dropstart">
+                <button type="button" class="btn btn-secondary btn-icon rounded" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical icon-xxs"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal-2" href="#">Adicionar</a>
+                  <a class="dropdown-item" href="#">Editar</a>
+                  <a class="dropdown-item" href="#">Remover</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Prova -->
+      <div class="row align-items-center mt-4">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+          <div class="bg-white rounded smooth-shadow-sm ">
+            <div class="d-flex align-items-center justify-content-between p-5">
+              <div class="d-flex align-items-center">
+                <div class="lh-1">
+                  <h2 class="mb-0">Concurso INSS 2020</h2>
+                  <p class="mb-0 d-block">@usuario</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-right">
+                <a href="#" class="btn btn-outline-primary d-none d-md-block ms-1">Responder</a>
+                <a href="#" class="btn btn-outline-primary d-none d-md-block ms-1">Responder</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prova -->
+      <div class="row align-items-center mt-4">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+          <div class="bg-white rounded smooth-shadow-sm ">
+            <div class="d-flex align-items-center justify-content-between p-5">
+              <div class="d-flex align-items-center">
+                <div class="lh-1">
+                  <h2 class="mb-0">Concurso INSS 2020</h2>
+                  <p class="mb-0 d-block">@usuario</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-right">
+                <a href="#" class="btn btn-outline-primary d-none d-md-block ms-1">Responder</a>
+                <a href="#" class="btn btn-outline-primary d-none d-md-block ms-1">Responder</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<div th:replace="~{partials/scripts}"></div>
+</body>
+</html>
