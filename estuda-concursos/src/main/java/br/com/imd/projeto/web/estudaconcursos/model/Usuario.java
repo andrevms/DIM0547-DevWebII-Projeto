@@ -30,6 +30,12 @@ public class Usuario {
 
     }
 
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+
     public Usuario(String nome, List<ListaDeEstudos> listaDeEstudos) {
         this.nome = nome;
         this.listaDeEstudos = listaDeEstudos;
@@ -87,6 +93,12 @@ public class Usuario {
 
     public void setListaDeEstudos(List<ListaDeEstudos> listaDeEstudos) {
         this.listaDeEstudos = listaDeEstudos;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", listaDeEstudos="
+                + listaDeEstudos + "]";
     }
 
 }

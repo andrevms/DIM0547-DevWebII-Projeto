@@ -35,9 +35,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public Usuario login(String email, String senha) {
-        return usuarioRepository.loginUsuario(email, senha);
-    }
-    
+    public boolean login(String email, String senha) {
+        var usuario = usuarioRepository.getUsuarioByLogin(email, senha);
+        if (usuario.size() > 0) return true;
+        return false;
+    }    
     
 }

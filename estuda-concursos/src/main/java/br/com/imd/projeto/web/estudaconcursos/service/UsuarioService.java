@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.imd.projeto.web.estudaconcursos.dto.CadastrarUsuarioDto;
 import br.com.imd.projeto.web.estudaconcursos.model.Usuario;
 
 @Service
@@ -17,5 +18,6 @@ public interface UsuarioService {
 
     public List<Usuario> getListUsuario();
 
-    public Usuario login(String email, String senha);
+    public boolean login(String email, String senha);
+    
 }

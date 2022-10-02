@@ -18,17 +18,20 @@
         <div class="card smooth-shadow-md">
           <!-- Card body -->
           <div class="card-body p-6">
+            <div class="alert alert-danger" role="alert" th:if="${erro != null}" th:text="${erro}">
+            </div>
+
             <!-- Form -->
-            <form>
+            <form method="post" th:action="@{/usuario/login}">
               <!-- Username -->
               <div class="mb-3">
                 <label for="email" class="form-label">Usuário</label>
-                <input type="email" id="email" class="form-control" name="email" placeholder="Usuário" required="">
+                <input type="email" id="email" class="form-control" name="email" placeholder="Usuário" required>
               </div>
               <!-- Password -->
               <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input type="password" id="password" class="form-control" name="password" placeholder="**************" required="">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" id="password" class="form-control" name="senha" placeholder="**********" required>
               </div>
 
               <div>
