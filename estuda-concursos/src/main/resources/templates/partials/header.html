@@ -3,7 +3,7 @@
   <nav class="navbar-dark navbar navbar-expand-lg bg-gray-800">
 
     <!-- Navbar -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" th:href="@{/}">
       <i class="mr-1 icon-sm" data-feather="check-square"></i>
       <span class="pt-5 fw-semibold">Estuda Concursos</span>
     </a>
@@ -13,10 +13,10 @@
     <ul class="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
 
       <li class="nav-item">
-        <a class="nav-link active p-2" href="@@webRoot/pages/sign-in.html">Entre</a>
+        <a class="nav-link active p-2" th:href="@{/login}">Entre</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link p-2" href="@@webRoot/pages/sign-up.html">Cadastre-se</a>
+        <a class="nav-link p-2" th:href="@{/cadastro}">Cadastre-se</a>
       </li>
       
       <!-- List -->

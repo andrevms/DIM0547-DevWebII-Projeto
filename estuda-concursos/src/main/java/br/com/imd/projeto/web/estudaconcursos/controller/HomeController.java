@@ -18,12 +18,12 @@ public class HomeController {
     public String login(Model model) {
         model.addAttribute("email", new String());
         model.addAttribute("senha", new String());
-        return "login";
+        return "pages/sign-in";
     }
 
     @RequestMapping(path = "/cadastro")
     public String cadastro() {
-        return "index";
+        return "pages/sign-up";
     }
 
 }
