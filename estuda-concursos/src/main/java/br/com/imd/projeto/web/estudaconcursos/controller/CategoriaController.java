@@ -61,7 +61,7 @@ public class CategoriaController {
     public ModelAndView removerCategoria(RedirectAttributes redirectAttributes,
             @PathVariable("id") String id) {
         categoriaService.removeCategoria(id);
-        redirectAttributes.addFlashAttribute("sucessoRemove", "Categoria removida com sucesso");
+        redirectAttributes.addFlashAttribute("sucesso", "Categoria removida com sucesso");
         return new ModelAndView("redirect:/categoria");
     }
 }
