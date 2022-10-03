@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.imd.projeto.web.estudaconcursos.model.Prova;
 import br.com.imd.projeto.web.estudaconcursos.repository.ProvaRepository;
+import org.springframework.data.domain.Sort;
 
 @Component
 public class ProvaServiceImpl implements ProvaService {
@@ -34,6 +35,6 @@ public class ProvaServiceImpl implements ProvaService {
 
     @Override
     public List<Prova> getListProva() {
-        return provaRepository.findAll();
+        return provaRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 }

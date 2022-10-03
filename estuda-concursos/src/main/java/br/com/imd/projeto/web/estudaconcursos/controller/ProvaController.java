@@ -3,7 +3,10 @@ package br.com.imd.projeto.web.estudaconcursos.controller;
 import br.com.imd.projeto.web.estudaconcursos.dto.RequisicaoAdicionarProvaDto;
 import br.com.imd.projeto.web.estudaconcursos.model.Prova;
 import br.com.imd.projeto.web.estudaconcursos.repository.ProvaRepository;
+import br.com.imd.projeto.web.estudaconcursos.service.ProvaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +23,12 @@ import java.util.List;
 public class ProvaController {
 
     @Autowired
-    private ProvaRepository provaRepository;
+    @Qualifier("provaServiceImpl")
+    ProvaService provaService;
 
     @GetMapping("minhas-provas")
     public String minhasProvas(RequisicaoAdicionarProvaDto requisicao, Model model) {
-        List<Prova> provas = provaRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        List<Prova> provas = provaService.getListProva();
         model.addAttribute("provas", provas);
         return "prova/minhas-provas";
     }
@@ -36,7 +40,7 @@ public class ProvaController {
         }
 
         Prova prova = requisicao.toProva();
-        provaRepository.save(prova);
+        provaService.saveProva(prova);
 
         return "redirect:/prova/minhas-provas";
     }
