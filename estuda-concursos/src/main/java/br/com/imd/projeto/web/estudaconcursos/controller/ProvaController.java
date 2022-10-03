@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,6 +26,16 @@ public class ProvaController {
     @Autowired
     @Qualifier("provaServiceImpl")
     ProvaService provaService;
+
+
+    @GetMapping("")
+    public ModelAndView gerenciar() {
+        var provas = provaService.getListProva();
+        var modelAndView = new ModelAndView("prova/gerenciar");
+        modelAndView.addObject("provas", provas);
+        return modelAndView;
+    }
+
 
     @GetMapping("minhas-provas")
     public String minhasProvas(RequisicaoAdicionarProvaDto requisicao, Model model) {
