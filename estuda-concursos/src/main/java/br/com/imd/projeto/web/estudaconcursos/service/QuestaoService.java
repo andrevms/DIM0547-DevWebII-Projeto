@@ -15,4 +15,6 @@ public interface QuestaoService {
     public Questao getQuestaoById(Integer id);
 
     public List<Questao> getListQuestao();
+
+    public void atualizarQuestaoEnunciado(int id, String categoria);
 }

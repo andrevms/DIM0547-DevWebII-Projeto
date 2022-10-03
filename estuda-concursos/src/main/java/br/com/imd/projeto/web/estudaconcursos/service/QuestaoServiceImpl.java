@@ -35,6 +35,9 @@ public class QuestaoServiceImpl implements QuestaoService {
        return questaoRepository.findAll();
     }
 
-    
-    
+    public void atualizarQuestaoEnunciado(int id, String enunciado) {
+        var cat = questaoRepository.getReferenceById(id);
+        cat.setEnunciado(enunciado);
+        questaoRepository.save(cat);
+    }
 }
