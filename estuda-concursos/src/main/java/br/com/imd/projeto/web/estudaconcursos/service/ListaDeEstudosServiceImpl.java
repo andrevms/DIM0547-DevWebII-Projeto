@@ -28,8 +28,9 @@ public class ListaDeEstudosServiceImpl implements ListaDeEstudosService {
 
     @Override
     public ListaDeEstudos getListaDeEstudosById(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+        return listaDeEstudosRepository.findById(id).map(lista -> {
+            return lista;
+        }).orElseThrow(() -> null);
     }
 
     @Override

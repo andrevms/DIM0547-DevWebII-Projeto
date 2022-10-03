@@ -27,13 +27,13 @@ public class ProvaServiceImpl implements ProvaService {
 
     @Override
     public Prova getProvaById(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+        return provaRepository.findById(id).map(prova -> {
+            return prova;
+        }).orElseThrow(() -> null);
     }
 
     @Override
     public List<Prova> getListProva() {
-        // TODO Auto-generated method stub
-        return null;
+        return provaRepository.findAll();
     }
 }

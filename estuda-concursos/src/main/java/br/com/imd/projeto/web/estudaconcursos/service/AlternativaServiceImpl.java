@@ -16,26 +16,24 @@ public class AlternativaServiceImpl implements AltenativaService {
 
     @Override
     public Alternativa saveAlternativa(Alternativa alternativa) {
-        // TODO Auto-generated method stub
-        return null;
+        return alternativaRepository.save(alternativa);
     }
 
     @Override
     public void removeAlternativa(Alternativa alternativa) {
-        // TODO Auto-generated method stub
-        
+       alternativaRepository.deleteById(alternativa.getId());
     }
 
     @Override
     public Alternativa getAlternativaById(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+        return alternativaRepository.findById(id).map(alt -> {
+            return alt;
+        }).orElseThrow(() -> null);
     }
 
     @Override
     public List<Alternativa> getListAlternativa() {
-        // TODO Auto-generated method stub
-        return null;
+        return alternativaRepository.findAll();
     }
 
 

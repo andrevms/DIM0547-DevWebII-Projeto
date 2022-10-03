@@ -27,8 +27,9 @@ public class QuestaoServiceImpl implements QuestaoService {
 
     @Override
     public Questao getQuestaoById(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+        return questaoRepository.findById(id).map(questao -> {
+            return questao;
+        }).orElseThrow(() -> null);
     }
 
     @Override

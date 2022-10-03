@@ -25,8 +25,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario getUsuarioById(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+        return usuarioRepository.findById(id).map(user -> {
+            return user;
+        }).orElseThrow(() -> null);
     }
 
     @Override
