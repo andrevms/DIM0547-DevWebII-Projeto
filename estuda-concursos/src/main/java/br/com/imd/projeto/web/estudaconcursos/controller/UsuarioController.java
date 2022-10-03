@@ -25,7 +25,7 @@ public class UsuarioController {
         System.out.println(req.toString());
 
         if (usuarioService.login(req.getEmail(), req.getSenha())) {
-            var modelAndView = new ModelAndView("dashboard");
+            var modelAndView = new ModelAndView("redirect:/dashboard");
             return modelAndView;
         } else {
             var modelAndView = new ModelAndView("pages/sign-in");

@@ -2,7 +2,9 @@ package br.com.imd.projeto.web.estudaconcursos.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.imd.projeto.web.estudaconcursos.model.Usuario;
 
@@ -26,4 +28,8 @@ public class HomeController {
         return "pages/sign-up";
     }
 
+    @GetMapping("/dashboard")
+    public ModelAndView dashboard() {
+        return new ModelAndView("dashboard");
+    }
 }
