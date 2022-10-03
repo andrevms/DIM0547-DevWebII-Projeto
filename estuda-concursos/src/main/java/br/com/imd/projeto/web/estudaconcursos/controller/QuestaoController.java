@@ -47,7 +47,8 @@ public class QuestaoController {
     public ModelAndView removerCategoria(RedirectAttributes redirectAttributes,
             @PathVariable("id") String id) {
         questaoService.removeQuestao(id);
-        redirectAttributes.addFlashAttribute("sucessoRemove", "Questao removida com sucesso");
+        redirectAttributes.addFlashAttribute("sucesso", "Questao removida com sucesso");
         return new ModelAndView("redirect:/questao");
     }
+
 }

@@ -3,7 +3,7 @@
 
 <head>
     <div th:replace="~{partials/head}"></div>
-    <title>Gerenciar Categorias | Estuda Concursos</title>
+    <title>Gerenciar Alternativa | Estuda Concursos</title>
 </head>
 
 <body class="bg-light">
@@ -20,9 +20,6 @@
                         VOLTAR
                     </a>
 
-                    <a class="btn btn-primary" th:href="@{/questao/nova}">
-                        NOVA QUESTAO
-                    </a>
                 </div>
             </div>
 
@@ -43,7 +40,7 @@
                     <div class="card">
                         <!-- card header  -->
                         <div class="card-header bg-white  py-4">
-                            <h4 class="mb-0">Questões</h4>
+                            <h4 class="mb-0">Alternativa</h4>
                         </div>
                         <!-- table  -->
                         <div class="table-responsive">
@@ -55,11 +52,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="questao: ${questoes}">
-                                        <td class="align-middle" th:text="${questao.enunciado}"></td>
+                                    <tr th:each="alt: ${alternativas}">
+                                        <td class="align-middle" th:text="${alt.alternativa}"></td>
                                         <td class="align-middle">
-                                            <a th:href="@{/questao/editar/{id}(id=${questao.id})}">Editar</a>, 
-                                            <a th:href="@{/questao/remover/{id}(id=${questao.id})}">Excluir</a>
+                                            <a th:href="@{/alternativa/editar/{id}(id=${alt.id})}">Editar</a>, 
+                                            <a th:href="@{/alternativa/remover/{id}(id=${alt.id})}">Excluir</a>
                                         </td>
                                     </tr>
                                 </tbody>
