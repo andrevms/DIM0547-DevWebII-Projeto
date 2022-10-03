@@ -10,7 +10,7 @@ import br.com.imd.projeto.web.estudaconcursos.model.Questao;
 public interface QuestaoService {
     public Questao saveQuestao(Questao questao);
 
-    public void removeQuestao(Questao questao);
+    public void removeQuestao(String id);
 
     public Questao getQuestaoById(Integer id);
 

@@ -37,6 +37,17 @@
                 </div>
             </div>
 
+            <div class="row" th:if="${sucessoRemove != null}">
+                <div class="col-12">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Sucesso!</strong> Questao removida com sucesso
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12 col-12">
                     <!-- card  -->

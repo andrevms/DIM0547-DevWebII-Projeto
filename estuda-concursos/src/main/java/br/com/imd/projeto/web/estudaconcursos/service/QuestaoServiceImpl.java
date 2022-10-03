@@ -19,9 +19,8 @@ public class QuestaoServiceImpl implements QuestaoService {
     }
 
     @Override
-    public void removeQuestao(Questao questao) {
-        // TODO Auto-generated method stub
-        
+    public void removeQuestao(String id) {
+        questaoRepository.deleteById(Integer.parseInt(id));
     }
 
     @Override
