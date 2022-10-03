@@ -16,14 +16,12 @@ public class CategoriaServiceImpl  implements CategoriaService{
 
     @Override
     public Categoria saveCategoria(Categoria categoria) {
-        // TODO Auto-generated method stub
-        return null;
+        return categoriaRepository.save(categoria);
     }
 
     @Override
-    public void removeCategoria(Categoria categoria) {
-        // TODO Auto-generated method stub
-        
+    public void removeCategoria(String id) {
+        categoriaRepository.deleteById(Integer.parseInt(id));
     }
 
     @Override
@@ -34,7 +32,18 @@ public class CategoriaServiceImpl  implements CategoriaService{
 
     @Override
     public List<Categoria> getListCategoria() {
-        // TODO Auto-generated method stub
-        return null;
+        return categoriaRepository.findAll();
+    }
+
+    @Override
+    public Categoria recuperarPorId(int id) {
+        return categoriaRepository.getReferenceById(id);
+    }
+
+    @Override
+    public void atualizarCategoria(int id, String categoria) {
+      var cat = categoriaRepository.getReferenceById(id);
+      cat.setCategoria(categoria);
+      categoriaRepository.save(cat);
     }
 }
