@@ -15,8 +15,7 @@ public class QuestaoServiceImpl implements QuestaoService {
 
     @Override
     public Questao saveQuestao(Questao questao) {
-        // TODO Auto-generated method stub
-        return null;
+        return questaoRepository.save(questao);
     }
 
     @Override
@@ -34,8 +33,7 @@ public class QuestaoServiceImpl implements QuestaoService {
 
     @Override
     public List<Questao> getListQuestao() {
-        // TODO Auto-generated method stub
-        return null;
+       return questaoRepository.findAll();
     }
 
     

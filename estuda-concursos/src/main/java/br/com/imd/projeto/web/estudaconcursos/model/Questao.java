@@ -45,6 +45,10 @@ public class Questao {
         this.enunciado = enunciado;
     }
 
+    public Questao(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
     public Questao(Integer id, String enunciado, Categoria categoria, Alternativa resposta,
             List<Alternativa> alternativas) {
         this.id = id;

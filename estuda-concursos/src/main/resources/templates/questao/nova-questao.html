@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <div th:replace="~{partials/head}"></div>
+    <title>Nova Questao | Estuda Concursos</title>
+</head>
+
+<body class="bg-light">
+    <div th:replace="~{partials/header}"></div>
+
+    <!-- content -->
+    <div class="row p-6 py-8">
+        <!-- col -->
+        <div class="offset-xl-1 col-xl-10 col-md-12">
+            <div class="row mb-3">
+                <!-- text -->
+                <div class="col-md-12 col-12">
+                    <a class="btn btn-primary me-2" th:href="@{/questao}">
+                        VOLTAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <!-- card  -->
+                    <div class="card">
+                        <!-- card header  -->
+                        <div class="card-header bg-white py-4">
+                            <h4 class="mb-0">Nova Questao</h4>
+                        </div>
+
+                        <form method="post" th:action="@{/questao/nova}">
+                            <div class="p-4">
+                                <div class="col-5 mb-3">
+                                    <label class="form-label" for="textInput">Enunciado</label>
+                                    <input type="text" id="textInput" class="form-control" name="enunciado"
+                                        placeholder="Enunciado da Questao">
+                                </div>
+                                <div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <div th:replace="~{partials/scripts}"></div>
+</body>
+
+</html>
