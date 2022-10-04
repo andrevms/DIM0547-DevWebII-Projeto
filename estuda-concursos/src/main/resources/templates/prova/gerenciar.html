@@ -55,11 +55,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="questao: ${provas}">
-                                        <td class="align-middle" th:text="${questao.enunciado}"></td>
+                                    <tr th:each="prova: ${provas}">
+                                        <td class="align-middle" th:text="${prova.provaNome}"></td>
                                         <td class="align-middle">
-                                            <a th:href="@{/questao/editar/{id}(id=${questao.id})}">Editar</a>, 
-                                            <a th:href="@{/questao/remover/{id}(id=${questao.id})}">Excluir</a>
+                                            <a th:href="@{/prova/editar/{id}(id=${prova.id})}">Editar</a>,
+                                            <a th:href="@{/prova/remover/{id}(id=${prova.id})}">Excluir</a>
                                         </td>
                                     </tr>
                                 </tbody>

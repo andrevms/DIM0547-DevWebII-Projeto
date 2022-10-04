@@ -16,14 +16,12 @@ public class ProvaServiceImpl implements ProvaService {
 
     @Override
     public Prova saveProva(Prova prova) {
-        // TODO Auto-generated method stub
-        return null;
+        return provaRepository.save(prova);
     }
 
     @Override
-    public void removeProva(Prova prova) {
-        // TODO Auto-generated method stub
-
+    public void removeProvaById(int id) {
+        provaRepository.deleteById(id);
     }
 
     @Override
@@ -36,5 +34,12 @@ public class ProvaServiceImpl implements ProvaService {
     @Override
     public List<Prova> getListProva() {
         return provaRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+    }
+
+    @Override
+    public void atualizarProva(int id, String prova) {
+        Prova p = provaRepository.getReferenceById(id);
+        p.setProvaNome(prova);
+        provaRepository.save(p);
     }
 }
