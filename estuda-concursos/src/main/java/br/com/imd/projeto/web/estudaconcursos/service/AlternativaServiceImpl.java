@@ -9,7 +9,7 @@ import br.com.imd.projeto.web.estudaconcursos.model.Alternativa;
 import br.com.imd.projeto.web.estudaconcursos.repository.AlternativaRepository;
 
 @Component
-public class AlternativaServiceImpl implements AltenativaService {
+public class AlternativaServiceImpl implements AlternativaService {
 
     @Autowired
     AlternativaRepository alternativaRepository;
@@ -20,8 +20,8 @@ public class AlternativaServiceImpl implements AltenativaService {
     }
 
     @Override
-    public void removeAlternativa(Alternativa alternativa) {
-       alternativaRepository.deleteById(alternativa.getId());
+    public void removeAlternativa(String id) {
+       alternativaRepository.deleteById(Integer.parseInt(id));
     }
 
     @Override
@@ -36,6 +36,11 @@ public class AlternativaServiceImpl implements AltenativaService {
         return alternativaRepository.findAll();
     }
 
-
+    @Override
+    public void atualizarAlternativa(int id, String alt) {
+      var cat = alternativaRepository.getReferenceById(id);
+      cat.setAlternativa(alt);
+      alternativaRepository.save(cat);
+    }
     
 }

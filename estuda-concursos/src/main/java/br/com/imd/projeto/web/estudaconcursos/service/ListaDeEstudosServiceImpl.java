@@ -16,14 +16,12 @@ public class ListaDeEstudosServiceImpl implements ListaDeEstudosService {
 
     @Override
     public ListaDeEstudos saveListaDeEstudos(ListaDeEstudos listaDeEstudos) {
-        // TODO Auto-generated method stub
-        return null;
+        return listaDeEstudosRepository.save(listaDeEstudos);
     }
 
     @Override
     public void removeListaDeEstudos(ListaDeEstudos listaDeEstudos) {
         // TODO Auto-generated method stub
-        
     }
 
     @Override
@@ -35,8 +33,7 @@ public class ListaDeEstudosServiceImpl implements ListaDeEstudosService {
 
     @Override
     public List<ListaDeEstudos> getListListaDeEstudos() {
-        // TODO Auto-generated method stub
-        return null;
+        return listaDeEstudosRepository.findAll();
     }
     
 }

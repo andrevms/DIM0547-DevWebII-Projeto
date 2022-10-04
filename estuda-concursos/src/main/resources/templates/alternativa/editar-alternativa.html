@@ -16,7 +16,7 @@
             <div class="row mb-3">
                 <!-- text -->
                 <div class="col-md-12 col-12">
-                    <a class="btn btn-primary me-2" th:href="@{/questao}">
+                    <a class="btn btn-primary me-2" th:href="@{/alternativa}">
                         VOLTAR
                     </a>
                 </div>
@@ -28,16 +28,16 @@
                     <div class="card">
                         <!-- card header  -->
                         <div class="card-header bg-white py-4">
-                            <h4 class="mb-0">Editar Questao</h4>
+                            <h4 class="mb-0">Editar Alternativa</h4>
                         </div>
 
-                        <form method="post" th:action="@{/questao}">
+                        <form method="post" th:action="@{/alternativa}">
                             <div class="p-4">
-                                <input type="hidden" name="id" th:value="${questao.id}" />
+                                <input type="hidden" name="id" th:value="${alt.id}" />
                                 <div class="col-5 mb-3">
-                                    <label class="form-label" for="textInput">Questao</label>
-                                    <input type="text" id="textInput" class="form-control" name="enunciado"
-                                        placeholder="Enunciado da Questao" th:value="${questao.enunciado}">
+                                    <label class="form-label" for="textInput">alternativa</label>
+                                    <input type="text" id="textInput" class="form-control" name="alternativa"
+                                        placeholder="Enunciado da Alternativa" th:value="${alt.alternativa}">
                                 </div>
                                 <div>
                                     <div class="col-4">

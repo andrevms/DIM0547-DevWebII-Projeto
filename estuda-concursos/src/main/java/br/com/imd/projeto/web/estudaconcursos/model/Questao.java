@@ -2,6 +2,7 @@ package br.com.imd.projeto.web.estudaconcursos.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "questao")
@@ -30,8 +33,10 @@ public class Questao {
     @JoinColumn(name = "resposta_id")
     private Alternativa resposta;
 
-    @ManyToMany
-    @JoinTable(name = "alternativas_questoes", joinColumns = @JoinColumn(name = "questao_id"), inverseJoinColumns = @JoinColumn(name = "alternativa_id"))
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable( name = "alternativas_questoes", 
+    joinColumns = @JoinColumn(name = "questao_id"), 
+    inverseJoinColumns = @JoinColumn(name = "alternativa_id"))
     private List<Alternativa> alternativas;
 
     @ManyToMany(mappedBy = "questoes")

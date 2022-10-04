@@ -26,8 +26,7 @@ public class CategoriaServiceImpl  implements CategoriaService{
 
     @Override
     public Categoria getCategoriaByNome(String nome) {
-        // TODO Auto-generated method stub
-        return null;
+        return categoriaRepository.findByCategoria(nome);
     }
 
     @Override
