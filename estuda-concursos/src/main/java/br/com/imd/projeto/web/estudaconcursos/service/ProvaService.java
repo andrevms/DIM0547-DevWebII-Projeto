@@ -11,7 +11,9 @@ public interface ProvaService {
 
     public Prova saveProva(Prova prova);
 
-    public void removeProva(Prova prova);
+    public void atualizarProva(int id, String prova);
+
+    public void removeProvaById(int id);
 
     public Prova getProvaById(Integer id);
 
