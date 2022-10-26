@@ -41,8 +41,8 @@ public class CategoriaServiceImpl  implements CategoriaService{
 
     @Override
     public void atualizarCategoria(int id, String categoria) {
-      var cat = categoriaRepository.getReferenceById(id);
-      cat.setCategoria(categoria);
-      categoriaRepository.save(cat);
+        var cat = categoriaRepository.getReferenceById(id);
+        cat.setCategoria(categoria);
+        categoriaRepository.save(cat);
     }
 }

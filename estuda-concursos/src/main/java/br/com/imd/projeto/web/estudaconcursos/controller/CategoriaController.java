@@ -49,7 +49,7 @@ public class CategoriaController {
         modelAndView.addObject("categoria", categoria);
         return modelAndView;
     }
-    
+
     @PostMapping("")
     public ModelAndView atualizarCategoria(AtualizarCategoriaDto req, RedirectAttributes redirectAttributes) {
         categoriaService.atualizarCategoria(req.getId(), req.getCategoria());
